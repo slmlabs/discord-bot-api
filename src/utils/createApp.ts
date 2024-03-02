@@ -7,6 +7,8 @@ import store from "connect-mongo";
 
 require("../strategies/discord");
 
+const SESSION_SECRET = process.env.SESSION_SECRET as string;
+
 export function createApp(): Express {
   const app = express();
   // Enable Parsing Middleware for Requests
@@ -24,7 +26,7 @@ export function createApp(): Express {
   //Enable Sessions
   app.use(
     session({
-      secret: "OPIAUJGBRIPGH923OUJHBCQW",
+      secret: SESSION_SECRET,
       resave: false,
       saveUninitialized: true,
       cookie: {

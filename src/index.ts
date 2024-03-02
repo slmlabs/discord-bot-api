@@ -1,8 +1,6 @@
 import { config } from "dotenv";
 config();
 
-import express, { Express } from "express";
-import routes from "./routes";
 import { createApp } from "./utils/createApp";
 import "./database";
 
